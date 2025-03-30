@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Xpert Fan - Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(to right, #2980B9, #6DD5FA); 
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            
+        }
+
+        .logo h1 {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: robo;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 70px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: black;
+        }
+
+        .feedback-section {
+            padding: 50px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-title h2 {
+            font-size: 32px;
+            color: #2c3e50;
+        }
+
+        .page-title p {
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .feedback-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .rating-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            cursor: pointer;
+            width: 30px;
+            font-size: 30px;
+            color: #ddd;
+            margin: 0;
+            transition: color 0.2s;
+        }
+
+        .stars label:before {
+            content: '★';
+        }
+
+        .stars input:checked ~ label,
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #f39c12;
+        }
+
+        .product-type {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .product-option {
+            flex: 1;
+        }
+
+        .product-option input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background: linear-gradient(to right, #2980B9, #6DD5FA); 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav li {
+                margin-bottom: 10px;
+            }
+
+            .product-type {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .feedback-form {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title h2 {
+                font-size: 24px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header  data-aos="fade-down" data-aos-duration="2000" >
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">❋</span>
+                <h1>Xpert Fan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Website.html">Home</a></li>
+                    <li><a href="Product.html">Products</a></li>
+                    <li><a href="About us.html">About Us</a></li>
+                    <li><a href="contact us.html">Contact</a></li>
+               
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main  data-aos="fade-up" data-aos-duration="3000">
+        <section class="feedback-section">
+            <div class="container">
+                <div class="page-title">
+                    <h2>Customer Feedback</h2>
+                    <p style="font-size: larger;">We value your opinion! Please share your thoughts about our products.</p>
+                </div>
+
+                <form class="feedback-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input placeholder="Enter Your Name" type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input placeholder="Enter Your Email" type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input placeholder="Enter Your Ph!" type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Type</label>
+                        <div class="product-type">
+                            <div class="product-option">
+                                <input type="radio" id="stand-fan" name="product-type" value="stand-fan" checked>
+                                <label for="stand-fan">Stand Fan</label>
+                            </div>
+                            <div class="product-option">
+                                <input type="radio" id="roof-fan" name="product-type" value="roof-fan">
+                                <label for="roof-fan">Roof Fan</label>
+                            </div>
+                            <div class="product-option">
+                                <input type="radio" id="Wall-fan" name="product-type" value="Wall-fan">
+                                <label for="Wall-fan">Wall Fan</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="model">Model Number (if known)</label>
+                        <input type="text" id="model" name="model">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purchase-date">Purchase Date</label>
+                        <input type="date" id="purchase-date" name="purchase-date">
+                    </div>
+
+                    <div class="form-group rating-group">
+                        <label>How would you rate our product?</label>
+                        <div class="stars">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback</label>
+                        <textarea placeholder="Enter Your Feedback Here........!" id="feedback" name="feedback" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="improvements">Any suggestions for improvements?</label>
+                        <textarea placeholder="if you have any suggestions for improvements you can write here.......!" id="improvements" name="improvements"></textarea>
+                    </div>
+
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Xpert Fan. All Rights Reserved.</p>
+            <p>Quality fans for every home and office</p>
+        </div>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpert Fan - Contact us</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<style>
+  
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; 
+}
+
+header, footer {
+    background: linear-gradient(to right, #2980B9, #6DD5FA);
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+h1, h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center; 
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+}
+
+
+#contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;      
+    margin: 0 auto;     
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#form-notice{
+    text-align: center;
+    font-style: italic;
+    color: grey;
+    margin-top: 10px;
+
+}
+
+
+#contact-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact-info li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    nav ul {
+        text-align: left;
+    }
+
+    nav li {
+        display: block;
+        margin: 5px 0; 
+    }
+
+    #contact-form {
+        margin-bottom: 10px;
+    }
+
+    #contact-info {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+@media (max-width: 480px) {
+    nav li {
+        margin: 2px 0;
+    }
+
+    #contact-form,
+    #contact-info {
+        border-radius: 0; 
+    }
+}
+</style>
+    <header  data-aos="fade-down" data-aos-duration="2000">
+        <h1>Xpert Fan Company</h1>
+        <nav>
+            <ul>
+                <li><a href="Website.html">Home</a></li>
+                <li><a href="Product.html">Products</a></li>
+                <li><a href="About us.html">About</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main  data-aos="fade-up" data-aos-duration="2000" >
+        <section id="contact-form">
+            <h2>Contact Us</h2>
+            <p style="text-align: center;">We'd love to hear from you!  Please use the form below to send us a message.</p>
+
+            <form action="#" method="POST"> 
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input placeholder="Enter Your Name" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input placeholder="Enter Your Email" type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input placeholder="Enter Your Subject" type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea placeholder="Write Your Message Here...!" id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <a href="Website.html"><button style="background-color: #21618C;" type="submit">Send Message</button></a>
+           
+            </form>
+        </section>
+
+        <section  data-aos="fade-up" data-aos-duration="1000" id="contact-info">
+            <h2>Other Ways to Reach Us</h2>
+            <ul>
+                <li><strong>Email:</strong> <a href="">XpertFan@gmail.com</a></li>
+                <li><strong>Phone:</strong> 555 888 999 1</li>
+                <li><strong>Address:</strong> Pakistan</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Xpert Fan. All rights reserved.</p>
+    </footer>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
