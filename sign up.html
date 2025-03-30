@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpert Fan - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<style>
+body {
+    background: #ADA996; 
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.signup-box {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    max-width: 95%;
+    margin: 20px auto;
+}
+
+
+.left-box {
+    flex: 1;
+    padding: 40px;
+    background: linear-gradient(to right, #2980B9, #6DD5FA); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-box h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.left-box p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.logo {
+    margin-right: 10px;
+    color: white; 
+    font-size: 70px;
+  
+}
+
+.logo-text {
+    font-weight: bold;
+}
+
+
+
+.right-box {
+    flex: 1;
+    padding: 40px;
+}
+
+.right-box h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2980B9;
+    box-shadow: 0 0 6px rgba(41, 128, 185, 0.3);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23666' d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 18px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #2980B9;
+    color: white;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #21618C; 
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.login-link a {
+    color: #2980B9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.terms-container input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+
+.fa {
+    margin-right: 10px;
+    color: #888;
+}
+
+
+@media (max-width: 992px) {
+    .signup-box {
+        flex-direction: column;
+    }
+
+    .left-box {
+        padding: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-box h1 {
+        font-size: 2em;
+    }
+
+    .left-box p {
+        font-size: 1em;
+    }
+
+    .right-box {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .left-box {
+        padding: 20px;
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+
+    .right-box h2 {
+        font-size: 1.75em;
+    }
+
+    .form-group label {
+        font-size: 0.95em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group select {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    button {
+        padding: 14px 20px;
+        font-size: 1em;
+    }
+}
+</style>
+    <div  data-aos="fade-up" data-aos-duration="1000" class="container">
+        <div class="signup-box">
+
+            <div class="left-box">
+                <h1>Welcome to the Xpert Fan Community!</h1>
+                <p>Unlock expert insights, connect with fellow fan enthusiasts, and stay cool with the latest news, tips, and exclusive deals on stand, roof, and ceiling fans!</p>
+                <div class="logo-container">
+                  <i class="fas fa-fan logo"></i>
+                  <span class="logo-text">Xpert Fan</span>
+                </div>
+            </div>
+
+            <div class="right-box">
+                <h2>Create Your Account</h2>
+                <form id="signup-form" action="#" method="POST">
+
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password"><i class="fas fa-lock"></i> Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fan_type"><i class="fas fa-fan"></i> Favorite Fan Type</label>
+                        <select id="fan_type" name="fan_type">
+                            <option value="stand">Stand Fan</option>
+                            <option value="roof">Roof Fan</option>
+                            <option value="ceiling">Wall fan</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group terms-container">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+
+                    <a href="Website.html"><button type="submit">Sign Up</button></a>
+
+                    <div class="login-link">
+                        Already have an account? <a href="login .html">Log In</a>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
